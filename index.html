@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>花舞计通</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/FileSaver.js"></script>
+    <script>
+      var content = "这是直接使用HTML5进行导出的";
+      function download(data, filename) {
+        var blob = new Blob([data], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, filename);
+      }
+    </script>
+  </head>
+
+  <body>
+    <input type="button" id="export" value="导出" />
+
+    <div class="container">
+      <!-- <div id="content"></div> -->
+      <!-- <img id="picture" src=""> -->
+      <div class="header">董岱泽</div>
+      <div class="display">
+        <ul></ul>
+      </div>
+      <form action="">
+        <input type="file" name="file" id="file_1" />
+        <textarea name="" id="content" cols="30" rows="10"></textarea>
+      </form>
+      <button>发送(Ctrl+Enter)</button>
+    </div>
+    <script>
+      // document.getElementById("file_1").addEventListener("change", (e) => {
+      //     //获取选择的文件对象
+      //     let file = e.target.files[0];
+      //     // 检测浏览器对FileReader的支持
+      //     if (window.FileReader) {
+      //         // 创建FileReader对象(文件对象)
+      //         const reader = new FileReader();
+
+      //         /*----------    6种事件模型    ---------*/
+      //         // 开始读取时：
+      //         reader.onloadstart = function (e) {
+      //             console.log("开始读取", e);
+      //         };
+      //         // 正在读取：
+      //         reader.onprogress = function (e) {
+      //             console.log("正在读取", e);
+      //         };
+      //         // 读取出错时：
+      //         reader.onerror = function (e) {
+      //             console.log("读取出错", e);
+      //         };
+      //         // 读取中断时：
+      //         reader.onabort = function (e) {
+      //             console.log("读取中断", e);
+      //         };
+      //         // 读取成功时：
+      //         reader.onload = function (e) {
+      //             console.log("读取成功", e);
+      //             if (/image\/\w+/.test(file.type)) {
+      //                 var li = document.createElement("li");
+      //                 li.innerHTML = "<span></span>" + "<img width='500px' src=" + e.target.result + ">";
+      //                 document.querySelector("ul").appendChild(li)
+      //                 document.getElementById("picture").src = e.target.result;
+      //             } else {
+      //                 // 输出文件
+      //                 var li = document.createElement("li");
+      //                 li.innerHTML = "<span></span>" + e.target.result;
+      //                 document.querySelector("ul").appendChild(li)
+      //                 // document.getElementById("content").innerText = e.target.result;
+      //             };
+
+      //         };
+      //         // 读取完成，无论成功失败：
+      //         reader.onloadend = function (e) {
+      //             console.log("读取完成，无论成功失败", e);
+
+      //         };
+      //         /*-------  4种文件读功能(方法、函数)  ------*/
+      //         /*	reader.readAsText(file,"utf-8");
+      //               reader.readAsBinaryString(file);  	// 将文件读取为二进制编码
+      //             reader.readAsDataURL(file);  		// 将文件读取为DataURL
+      //             reader.readAsText(none);  			// 终端读取操作 			*/
+
+      //         if (/image\/\w+/.test(file.type)) {
+      //             reader.readAsDataURL(file);
+      //         } else {
+      //             // 输出文件
+      //             reader.readAsText(file, "utf-8");
+      //         };
+      //     } else {
+      //         alert("Not supported by your browser!");
+      //     };
+      // }, false);
+    </script>
+
+    <script src="./js/index.js" async="async"></script>
+  </body>
+</html>
